@@ -7,12 +7,18 @@ import Register from "./pages/Register";
 import Redemption from "./pages/Redemption";
 import Admin from "./pages/Admin";
 
+const isAdmin = import.meta.env.VITE_APP_MODE === "admin";
+
 function App() {
   const [customer, setCustomer] = useState<MeResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [showRegister, setShowRegister] = useState(false);
   const [showRedemption, setShowRedemption] = useState(false);
   const [showAdmin, setShowAdmin] = useState(false);
+
+  if (isAdmin) {
+    return <Admin onBack={() => window.location.reload()} />;
+  }
 
   async function loadSession() {
     const token = getToken();
@@ -78,7 +84,7 @@ function App() {
       <Login onLogin={loadSession} onRegister={() => setShowRegister(true)} />
     );
   }
-  
+
   if (showRedemption) {
     return (
       <Redemption
