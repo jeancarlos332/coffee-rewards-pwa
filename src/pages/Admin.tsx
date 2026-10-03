@@ -49,7 +49,7 @@ function Admin({ onBack }: AdminProps) {
 
     try {
       const response = await fetch(
-        `http://localhost:8000/api/admin/redemptions/${encodeURIComponent(qrCode)}`,
+        `https://coffee-rewards-api.onrender.com/api/admin/redemptions/${encodeURIComponent(qrCode)}`,
       );
 
       const data = await response.json();
@@ -111,7 +111,7 @@ function Admin({ onBack }: AdminProps) {
 
     try {
       const response = await fetch(
-        `http://localhost:8000/api/admin/redemptions/${encodeURIComponent(code)}/use`,
+        `https://coffee-rewards-api.onrender.com/api/admin/redemptions/${encodeURIComponent(code)}/use`,
         {
           method: "POST",
         },
