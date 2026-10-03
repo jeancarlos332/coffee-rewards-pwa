@@ -33,7 +33,7 @@ function Home({ customer, onRedeem, onLogout }: HomeProps) {
           <p className="text-sm text-[#78716c]">Hola,</p>
 
           <h2 className="text-2xl font-bold text-[#3b2418]">
-            {customer.name} 👋
+            {customer.name}
           </h2>
         </section>
 
@@ -67,7 +67,7 @@ function Home({ customer, onRedeem, onLogout }: HomeProps) {
             <div className="mt-3">
               {customer.canRedeem ? (
                 <p className="font-semibold text-[#3b2418]">
-                  🎉 ¡Ya puedes reclamar tu bebida gratis!
+                   ¡Ya puedes reclamar tu bebida gratis!
                 </p>
               ) : (
                 <p className="text-sm text-[#78716c]">
@@ -98,14 +98,6 @@ function Home({ customer, onRedeem, onLogout }: HomeProps) {
           CERRAR SESIÓN
         </button>
 
-        <button
-          onClick={() => {
-            window.location.href = "/admin";
-          }}
-          className="mt-2 w-full py-3 text-sm font-semibold text-[#63402b]"
-        >
-          ADMIN
-        </button>
       </div>
     </main>
   );
